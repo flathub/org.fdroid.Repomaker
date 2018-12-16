@@ -1,7 +1,7 @@
 # F-Droid Repomaker's Flatpak
 
 This project contains the source files to create the
-[FlatPak](https://flatpak.org/) for
+[Flatpak](https://flatpak.org/) for
 [F-Droid Repomaker](https://f-droid.org/repomaker/).
 
 With Repomaker, you can easily create your own
