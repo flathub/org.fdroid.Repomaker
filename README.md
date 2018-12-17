@@ -8,6 +8,15 @@ With Repomaker, you can easily create your own
 [F-Droid](https://f-droid.org) repo without needing any special
 knowledge to do so.
 
+Development of this flatpak happens at
+[gitlab.com/fdroid/fdroid-repomaker-flatpak](https://gitlab.com/fdroid/fdroid-repomaker-flatpak).
+Once it's considered stable,
+it'll be pushed to the repo at
+[github.com/flathub/org.fdroid.Repomaker](https://github.com/flathub/org.fdroid.Repomaker).
+
+Therefore, if you want to make improvements,
+please open a merge request at GitLab.
+
 ## Installation
 
 To install Repomaker from Flathub, use the following:
