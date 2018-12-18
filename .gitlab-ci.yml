@@ -14,8 +14,7 @@ flatpak:
   stage: build
   variables:
     GIT_SUBMODULE_STRATEGY: normal
-  allow_failure: true
-  when: manual
+  allow_failure: false
   cache:
     paths:
       - .flatpak-builder/cache
