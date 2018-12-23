@@ -224,9 +224,9 @@
             "name" : "repomaker",
             "buildsystem" : "simple",
             "build-commands" : [
-                "install -Dm644 org.fdroid.Repomaker.svg /app/share/icons/hicolor/scalable/apps/org.fdroid.Repomaker.svg",
-                "install -Dm644 org.fdroid.Repomaker.desktop /app/share/applications/org.fdroid.Repomaker.desktop",
-                "install -Dm644 org.fdroid.Repomaker.appdata.xml /app/share/metainfo/org.fdroid.Repomaker.appdata.xml",
+                "install -Dm644 org.fdroid.Repomaker.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+                "install -Dm644 org.fdroid.Repomaker.desktop /app/share/applications/${FLATPAK_ID}.desktop",
+                "install -Dm644 org.fdroid.Repomaker.appdata.xml /app/share/metainfo/${FLATPAK_ID}.appdata.xml",
                 "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} repomaker",
                 "pip3 install --no-deps --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} pywebview"
             ],
