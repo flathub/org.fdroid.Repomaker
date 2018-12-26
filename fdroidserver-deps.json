@@ -12,18 +12,13 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/dd/bf/4138e7bfb757de47d1f4b6994648ec67a51efe58fa907c1e11e350cddfca/six-1.12.0.tar.gz",
-            "sha256": "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"
-        },
-        {
-            "type": "file",
             "url": "https://files.pythonhosted.org/packages/e7/a7/4cd50e57cc6f436f1cc3a7e8fa700ff9b8b4d471620629074913e3735fb2/cffi-1.11.5.tar.gz",
             "sha256": "e90f17980e6ab0f3c2f3730e56d1fe9bcba1891eeea58966e89d352492cc74f4"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/f3/ec/bb6b384b5134fd881b91b6aa3a88ccddaad0103857760711a5ab8c799358/bcrypt-3.1.4.tar.gz",
-            "sha256": "67ed1a374c9155ec0840214ce804616de49c3df9c5bc66740687c1c9b1cd9e8d"
+            "url": "https://files.pythonhosted.org/packages/91/a5/fd19eac0252e56b4ce65ced937ae40024782c21108da7d830003b7f76cdb/bcrypt-3.1.5.tar.gz",
+            "sha256": "136243dc44e5bab9b61206bd46fff3018bd80980b1a1dfbab64a22ff5745957f"
         },
         {
             "type": "file",
@@ -67,8 +62,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/84/8b/7985d4a9e714e84b2a9cccee99c6d292c94e91b76363677402d794bffffa/ruamel.yaml-0.15.80.tar.gz",
-            "sha256": "4f203351575dba0829c7b1e5d376d08cf5f58e4a2b844e8ce552b3e41cd414e6"
+            "url": "https://files.pythonhosted.org/packages/e1/15/3572352015a3c768131edd5a5c7d5e69ffd0b2eb385ac4cd1c0084e2a858/ruamel.yaml-0.15.81.tar.gz",
+            "sha256": "6cbe7273a2e7667cd2ca7b12bec1c715a8259ad80f09c6f12c378f664d29fa5e"
         }
     ]
 }
