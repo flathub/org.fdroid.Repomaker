@@ -233,18 +233,18 @@
             "sources" : [
                 {
                     "type" : "file",
-                    "url" : "https://gitlab.com/fdroid/repomaker/raw/c99822865dda1dceca672884232bdc9b32c1c692/debian/data/org.fdroid.Repomaker.svg",
+                    "url" : "https://gitlab.com/fdroid/repomaker/raw/1.0.0b1/debian/data/org.fdroid.Repomaker.svg",
                     "sha256": "c6098a7fd5f00b0715777583df93a42910474f7c3d1bbd8679ad6e5a109be192"
                 },
                 {
                     "type" : "file",
-                    "url" : "https://gitlab.com/fdroid/repomaker/raw/c99822865dda1dceca672884232bdc9b32c1c692/debian/data/org.fdroid.Repomaker.desktop",
+                    "url" : "https://gitlab.com/fdroid/repomaker/raw/1.0.0b1/debian/data/org.fdroid.Repomaker.desktop",
                     "sha256": "70661cb9d77a14d540ad4e1748008147efee97139a50b52fca798231a9babc2b"
                 },
                 {
                     "type" : "file",
-                    "url" : "https://gitlab.com/fdroid/repomaker/raw/c99822865dda1dceca672884232bdc9b32c1c692/debian/data/org.fdroid.Repomaker.appdata.xml",
-                    "sha256": "14fc2be5ccd8488ef49dc9edc97a6b584666a8b1931d5f8bdc9b9cdcbf06aeba"
+                    "url" : "https://gitlab.com/fdroid/repomaker/raw/9fe645a71dad4572302d530d27e027ffd25107dd/debian/data/org.fdroid.Repomaker.appdata.xml",
+                    "sha256": "b55eaf219729e24bc0a6b00f81ca788f7bfeb9a42c42eaa1a057ebbc94f3c000"
                 },
                 {
                     "type": "file",
@@ -253,8 +253,8 @@
                 },
                 {
                     "type" : "file",
-                    "url" : "https://media.dorfbrunnen.eu/repomaker-0.0.5.tar.gz",
-                    "sha256": "4bc4376d8c38eb52607cb53d8e6d4076138f3b09eded6091963448321378a79f"
+                    "url" : "https://files.pythonhosted.org/packages/85/91/cc8eb075ebdcf471fc85e345c37f55dd50781baf429074269d05b147940e/repomaker-1.0.0b1.tar.gz",
+                    "sha256": "7532a488c9cd0c7e554dde064b965fdddd6cb74e5bebb165fa434b6233ca5178"
                 }
             ]
         }
