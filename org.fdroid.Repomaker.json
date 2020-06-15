@@ -2,5 +2,5 @@
     "app-id": "org.fdroid.Repomaker",
     "runtime": "org.kde.Platform",
     "runtime-version": "5.11",
-    "sdk": "org.kde.Sdk",
+    "sdk": "org.kde.Sdk"
 }
