@@ -1,0 +1,23 @@
+{
+    "app-id": "org.fdroid.Repomaker",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.11",
+    "sdk": "org.kde.Sdk",
+    "command": "repomaker",
+    "modules": [
+        {
+            "name" : "repomaker",
+            "buildsystem" : "simple",
+            "build-commands" : [
+                "install -Dm644 org.fdroid.Repomaker.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg"
+            ],
+            "sources" : [
+                {
+                    "type" : "file",
+                    "url" : "https://gitlab.com/fdroid/repomaker/raw/1.0.0b1/debian/data/org.fdroid.Repomaker.svg",
+                    "sha256": "c6098a7fd5f00b0715777583df93a42910474f7c3d1bbd8679ad6e5a109be192"
+                }
+            ]
+        }
+    ]
+}
