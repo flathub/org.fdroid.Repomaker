@@ -3,7 +3,6 @@
     "runtime": "org.kde.Platform",
     "runtime-version": "5.11",
     "sdk": "org.kde.Sdk",
-    "command": "repomaker",
     "modules": [
         {
             "name" : "repomaker",
