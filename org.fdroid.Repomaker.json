@@ -4,7 +4,7 @@
     "runtime-version": "5.11",
     "sdk": "org.kde.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.openjdk9"
+        "org.freedesktop.Sdk.Extension.openjdk11"
     ],
     "command": "repomaker",
     "finish-args" : [
@@ -14,8 +14,8 @@
         "--device=dri",
         "--socket=wayland",
         "--filesystem=home",
-        "--env=PATH=/app/bin:/usr/bin:/app/java-9-openjdk/bin",
-        "--env=JAVA_HOME=/app/java-9-openjdk"
+        "--env=PATH=/app/jre/bin:/app/bin:/usr/bin",
+        "--env=JAVA_HOME=/app/jre"
     ],
     "modules": [
         "shared-modules/udev/udev-175.json",
@@ -88,10 +88,7 @@
         {
             "name": "openjdk",
             "buildsystem": "simple",
-            "build-commands": [
-                "mkdir -p /app/java-9-openjdk/",
-                "cp -ra /usr/lib/sdk/openjdk9/jvm/openjdk-9.0.4/bin /usr/lib/sdk/openjdk9/jvm/openjdk-9.0.4/conf /usr/lib/sdk/openjdk9/jvm/openjdk-9.0.4/include /usr/lib/sdk/openjdk9/jvm/openjdk-9.0.4/lib /app/java-9-openjdk/"
-            ]
+	    "build-commands" : [ "/usr/lib/sdk/openjdk11/install.sh" ]
         },
         "python-deps.json",
         "fdroidserver-deps.json",
