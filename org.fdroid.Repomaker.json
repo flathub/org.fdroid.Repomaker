@@ -1,7 +1,7 @@
 {
     "app-id": "org.fdroid.Repomaker",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.12",
+    "runtime-version": "5.15",
     "sdk": "org.kde.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.openjdk11"
@@ -18,15 +18,14 @@
         "--env=JAVA_HOME=/app/jre"
     ],
     "modules": [
-        "shared-modules/udev/udev-175.json",
         {
             "name": "rsync",
             "no-autogen": true,
             "cleanup": ["/share/man"],
             "sources": [{
                 "type": "archive",
-                "url": "https://download.samba.org/pub/rsync/rsync-3.2.3.tar.gz",
-                "sha256": "becc3c504ceea499f4167a260040ccf4d9f2ef9499ad5683c179a697146ce50e"
+                "url": "https://download.samba.org/pub/rsync/src/rsync-3.1.3.tar.gz",
+                "sha256": "55cc554efec5fdaad70de921cd5a5eeb6c29a95524c715f3bbf849235b0800c0"
             }]
         },
         {
@@ -35,8 +34,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-7.9p1.tar.gz",
-                    "sha256": "6b4b3ba2253d84ed3771c8050728d597c91cfce898713beb7b64a305b6f11aad"
+                    "url": "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-8.4p1.tar.gz",
+                    "sha256": "5a01d22e407eb1c05ba8a8f7c654d388a13e9f226e4ed33bd38748dafa1d2b24"
                 }
             ]
         },
@@ -50,23 +49,40 @@
             }]
         },
         {
-	    "name": "python3-PyQt5",
-	    "buildsystem": "simple",
-	    "build-commands": [
-		"pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} PyQt5"
-	    ],
-	    "sources": [
-		{
-		    "type": "file",
-		    "url": "https://files.pythonhosted.org/packages/ec/7d/c8d2326c405cfed1858af83915fa02ba9e9722ae3e0343df0950fd900039/PyQt5_sip-4.19.18-cp37-cp37m-manylinux1_x86_64.whl",
-		    "sha256": "0a6c272ad2b6556a804a66bf808240ae0db88ab26f5ce37231da8c1d3e6910a6"
-		},
-		{
-		    "type": "file",
-		    "url": "https://files.pythonhosted.org/packages/c0/6d/23c1a98dcc744096db91aa53b2ba52d4aa8b3118dafa8947b816a5600af3/PyQt5-5.12.3-5.12.9-cp35.cp36.cp37.cp38-abi3-manylinux1_x86_64.whl",
-		    "sha256": "ad76127512e373665f79eb54bfc8c99e242f703673752f6b8b28251499d20623"
-		}
-	    ]
+            "name": "PyQt5",
+            "cleanup": ["/bin/sip", "/include", "/lib/python3.7/site-packages/*.pyi"],
+            "config-opts": ["--disable-static", "--enable-x11"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-5.11.3/PyQt5_gpl-5.11.3.tar.gz",
+                    "sha256": "c9b57d15601d436faf35dacf8e0acefa220194829a653e771e80b189b3261073"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "python3 configure.py --confirm-license --no-docstrings --assume-shared --no-sip-files --no-qml-plugin --no-tools --no-qsci-api -d ${FLATPAK_DEST}/lib/python3.8/site-packages --sip=${FLATPAK_DEST}/bin/sip --sip-incdir=${FLATPAK_DEST}/include --stubsdir=${FLATPAK_DEST}/lib/python3.8/site-packages --disable=QtSensors --disable=QtQuick --disable=QtQml --disable=QtTest --disable=QtQuickWidgets --disable=QtSql --disable=QtXmlPatterns --disable=QtMultimedia --disable=QtMultimediaWidgets --disable=QtLocation --disable=QtDesigner --disable=QtOpenGL --disable=QtBluetooth --disable=QtNfc --disable=QtPositioning"
+                    ]
+                }
+            ],
+            "no-autogen": true,
+            "modules": [{
+                "name": "sip",
+                "no-autogen": true,
+                "sources": [
+                    {
+                        "type": "archive",
+                        "url": "https://sourceforge.net/projects/pyqt/files/sip/sip-4.19.13/sip-4.19.13.tar.gz",
+                        "sha256": "e353a7056599bf5fbd5d3ff9842a6ab2ea3cf4e0304a0f925ec5862907c0d15e"
+                    },
+                    {
+                        "type": "shell",
+                        "commands": [
+                            "python3 configure.py --sip-module PyQt5.sip -b ${FLATPAK_DEST}/bin -d ${FLATPAK_DEST}/lib/python3.8/site-packages -e ${FLATPAK_DEST}/include -v ${FLATPAK_DEST}/share/sip --stubsdir=${FLATPAK_DEST}/lib/python3.8/site-packages"
+                        ]
+                    }
+                ]
+            }]
         },
         {
             "name": "openjdk",
