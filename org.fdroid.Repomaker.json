@@ -98,7 +98,7 @@
                 "install -Dm644 org.fdroid.Repomaker.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
                 "install -Dm644 org.fdroid.Repomaker.desktop /app/share/applications/${FLATPAK_ID}.desktop",
                 "install -Dm644 org.fdroid.Repomaker.appdata.xml /app/share/metainfo/${FLATPAK_ID}.appdata.xml",
-                "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} repomaker",
+                "pip3 install --no-index --ignore-requires-python --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} repomaker",
                 "pip3 install --no-deps --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} pywebview"
             ],
             "sources" : [
