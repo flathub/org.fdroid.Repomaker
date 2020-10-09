@@ -47,8 +47,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/62/b8/db619d97819afb52a3ff5ff6ad3f7de408cc83a8ec2dfb31a1731c0a97c2/kiwisolver-1.2.0.tar.gz",
-            "sha256": "247800260cd38160c362d211dcaf4ed0f7816afb5efe56544748b21d6ad6d17f"
+            "url": "https://files.pythonhosted.org/packages/36/ac/c8627c214954b18b197f137ee96bc99e1cc31913d80d7ad59fbab3b05945/kiwisolver-1.2.0-cp38-cp38-manylinux1_x86_64.whl",
+            "sha256": "e586b28354d7b6584d8973656a7954b1c69c93f708c0c07b77884f91640b7657"
         },
         {
             "type": "file",
@@ -82,8 +82,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/44/a6/7fb6e8b3f4a6051e72e4e2218889351f0ee484b9ee17e995f5ccff780300/setuptools-50.3.0-py3-none-any.whl",
-            "sha256": "c77b3920663a435c9450d9d971c48f5a7478fca8881b2cd2564e59f970f03536"
+            "url": "https://files.pythonhosted.org/packages/a1/64/dcccbe676d964a05ea8f07528818ace12c5da0a74ac165bd99ad3de2b84b/setuptools-49.1.3-py3-none-any.whl",
+            "sha256": "d2bd04e36f3f4994b3112eb6f663602c5dfc0d2451fef8dbfbbf019bf455357f"
         },
         {
             "type": "file",
@@ -207,8 +207,18 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/2b/4c/fe4b36325795524f35d39edc390c89584e9a901df9e615df6f5effddaa0e/matplotlib-3.3.2.tar.gz",
-            "sha256": "3d2edbf59367f03cd9daf42939ca06383a7d7803e3993eb5ff1bee8e8a3fbb6b"
+            "url": "https://files.pythonhosted.org/packages/93/95/83cca4fe4e4925142542acd318cb59b188eeb7a53bc24a6aacc0834a23b9/matplotlib-3.3.2-cp38-cp38-manylinux1_x86_64.whl",
+            "sha256": "c5d0c2ae3e3ed4e9f46b7c03b40d443601012ffe8eb8dfbb2bd6b2d00509f797"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/83/72/611c121b6bd15479cb62f1a425b2e3372e121b324228df28e64cc28b01c2/wheel-0.35.1.tar.gz",
+            "sha256": "99a22d87add3f634ff917310a3d87e499f19e663413a52eb9232c447aa646c9f"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/ad/4b/9e53bcce3c959fd0db143626e573210bba07be810fe8d7296373948c4183/Cython-0.29.21-py2.py3-none-any.whl",
+            "sha256": "5c4276fdcbccdf1e3c1756c7aeb8395e9a36874fa4d30860e7694f43d325ae13"
         },
         {
             "type": "file",
