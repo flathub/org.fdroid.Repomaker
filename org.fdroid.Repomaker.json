@@ -124,8 +124,8 @@
                 },
                 {
                     "type" : "file",
-                    "url" : "https://files.pythonhosted.org/packages/85/91/cc8eb075ebdcf471fc85e345c37f55dd50781baf429074269d05b147940e/repomaker-1.0.0b1.tar.gz",
-                    "sha256": "7532a488c9cd0c7e554dde064b965fdddd6cb74e5bebb165fa434b6233ca5178"
+                    "url" : "https://files.pythonhosted.org/packages/07/6d/9ee43c5c45a38a2238b6cc550cf577bd44e29d92d5458a43ac759b54ae50/repomaker-1.0.0b2.tar.gz",
+                    "sha256": "6f6d0670a4eeb7431de2acb26c286b6b155bfc456d64ce5dbec691cbd2c9a5c0"
                 }
             ]
         }
