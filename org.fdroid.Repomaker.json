@@ -1,8 +1,8 @@
 {
     "app-id": "org.fdroid.Repomaker",
-    "runtime": "org.kde.Platform",
-    "runtime-version": "5.15",
-    "sdk": "org.kde.Sdk",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "3.38",
+    "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.openjdk11"
     ],
@@ -46,42 +46,6 @@
                 "type": "archive",
                 "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.21.0.tar.gz",
                 "sha256": "85eca51c7404da75e353eba587f87fea9481ba41e162206a6f70ad8118147bee"
-            }]
-        },
-        {
-            "name": "PyQt5",
-            "cleanup": ["/bin/sip", "/include", "/lib/python3.7/site-packages/*.pyi"],
-            "config-opts": ["--disable-static", "--enable-x11"],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-5.11.3/PyQt5_gpl-5.11.3.tar.gz",
-                    "sha256": "c9b57d15601d436faf35dacf8e0acefa220194829a653e771e80b189b3261073"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "python3 configure.py --confirm-license --no-docstrings --assume-shared --no-sip-files --no-qml-plugin --no-tools --no-qsci-api -d ${FLATPAK_DEST}/lib/python3.8/site-packages --sip=${FLATPAK_DEST}/bin/sip --sip-incdir=${FLATPAK_DEST}/include --stubsdir=${FLATPAK_DEST}/lib/python3.8/site-packages --disable=QtSensors --disable=QtQuick --disable=QtQml --disable=QtTest --disable=QtQuickWidgets --disable=QtSql --disable=QtXmlPatterns --disable=QtMultimedia --disable=QtMultimediaWidgets --disable=QtLocation --disable=QtDesigner --disable=QtOpenGL --disable=QtBluetooth --disable=QtNfc --disable=QtPositioning"
-                    ]
-                }
-            ],
-            "no-autogen": true,
-            "modules": [{
-                "name": "sip",
-                "no-autogen": true,
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://sourceforge.net/projects/pyqt/files/sip/sip-4.19.13/sip-4.19.13.tar.gz",
-                        "sha256": "e353a7056599bf5fbd5d3ff9842a6ab2ea3cf4e0304a0f925ec5862907c0d15e"
-                    },
-                    {
-                        "type": "shell",
-                        "commands": [
-                            "python3 configure.py --sip-module PyQt5.sip -b ${FLATPAK_DEST}/bin -d ${FLATPAK_DEST}/lib/python3.8/site-packages -e ${FLATPAK_DEST}/include -v ${FLATPAK_DEST}/share/sip --stubsdir=${FLATPAK_DEST}/lib/python3.8/site-packages"
-                        ]
-                    }
-                ]
             }]
         },
         {
