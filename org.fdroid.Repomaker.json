@@ -1,6 +1,100 @@
 {
     "app-id": "org.fdroid.Repomaker",
-    "runtime": "org.kde.Platform",
-    "runtime-version": "5.11",
-    "sdk": "org.kde.Sdk"
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "3.38",
+    "sdk": "org.gnome.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.openjdk11"
+    ],
+    "command": "repomaker",
+    "finish-args" : [
+        "--share=ipc",
+        "--socket=x11",
+        "--share=network",
+        "--device=dri",
+        "--socket=wayland",
+        "--filesystem=home",
+        "--env=PATH=/app/jre/bin:/app/bin:/usr/bin",
+        "--env=JAVA_HOME=/app/jre"
+    ],
+    "modules": [
+        {
+            "name": "rsync",
+            "no-autogen": true,
+            "cleanup": ["/share/man"],
+            "sources": [{
+                "type": "archive",
+                "url": "https://download.samba.org/pub/rsync/src/rsync-3.1.3.tar.gz",
+                "sha256": "55cc554efec5fdaad70de921cd5a5eeb6c29a95524c715f3bbf849235b0800c0"
+            }]
+        },
+        {
+            "name": "openssh",
+            "config-opts": ["--without-pie"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-8.4p1.tar.gz",
+                    "sha256": "5a01d22e407eb1c05ba8a8f7c654d388a13e9f226e4ed33bd38748dafa1d2b24"
+                }
+            ]
+        },
+        {
+            "name": "git",
+            "no-autogen": true,
+            "sources": [{
+                "type": "archive",
+                "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.21.0.tar.gz",
+                "sha256": "85eca51c7404da75e353eba587f87fea9481ba41e162206a6f70ad8118147bee"
+            }]
+        },
+        {
+            "name": "openjdk",
+            "buildsystem": "simple",
+            "build-commands" : [
+              "/usr/lib/sdk/openjdk11/install.sh",
+              "cp /usr/lib/sdk/openjdk11/jvm/openjdk-11/bin/jarsigner /app/jre/bin/"
+            ]
+        },
+        "python-deps.json",
+        "fdroidserver-deps.json",
+        {
+            "name" : "repomaker",
+            "buildsystem" : "simple",
+            "build-commands" : [
+                "install -Dm644 org.fdroid.Repomaker.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+                "install -Dm644 org.fdroid.Repomaker.desktop /app/share/applications/${FLATPAK_ID}.desktop",
+                "install -Dm644 org.fdroid.Repomaker.appdata.xml /app/share/metainfo/${FLATPAK_ID}.appdata.xml",
+                "pip3 install --no-index --ignore-requires-python --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} repomaker",
+                "pip3 install --no-deps --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} pywebview"
+            ],
+            "sources" : [
+                {
+                    "type" : "file",
+                    "url" : "https://gitlab.com/fdroid/repomaker/raw/1.0.0b1/debian/data/org.fdroid.Repomaker.svg",
+                    "sha256": "c6098a7fd5f00b0715777583df93a42910474f7c3d1bbd8679ad6e5a109be192"
+                },
+                {
+                    "type" : "file",
+                    "url" : "https://gitlab.com/fdroid/repomaker/raw/1.0.0b1/debian/data/org.fdroid.Repomaker.desktop",
+                    "sha256": "70661cb9d77a14d540ad4e1748008147efee97139a50b52fca798231a9babc2b"
+                },
+                {
+                    "type" : "file",
+                    "url" : "https://gitlab.com/fdroid/repomaker/raw/9fe645a71dad4572302d530d27e027ffd25107dd/debian/data/org.fdroid.Repomaker.appdata.xml",
+                    "sha256": "b55eaf219729e24bc0a6b00f81ca788f7bfeb9a42c42eaa1a057ebbc94f3c000"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/a3/a8/32af11b7893d4d4239df5496a545dc870a7c41b99c5418199a384768920a/pywebview-2.2.1.tar.gz",
+                    "sha256": "b680dcc517a8b742b1abec6db626d3795b7a5b589af36c0bc022febc3285904b"
+                },
+                {
+                    "type" : "file",
+                    "url" : "https://files.pythonhosted.org/packages/07/6d/9ee43c5c45a38a2238b6cc550cf577bd44e29d92d5458a43ac759b54ae50/repomaker-1.0.0b2.tar.gz",
+                    "sha256": "6f6d0670a4eeb7431de2acb26c286b6b155bfc456d64ce5dbec691cbd2c9a5c0"
+                }
+            ]
+        }
+    ]
 }
