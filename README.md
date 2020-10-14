@@ -1,7 +1,5 @@
 # F-Droid Repomaker's Flatpak
 
-**Unmaintained**: The last release of Repomaker happened on January 29, 2019. Since then, no more development happened due to the lack of volunteers. Please see [#233](https://gitlab.com/fdroid/repomaker/-/issues/233) for more information.
-
 This project contains the source files to create the
 [Flatpak](https://flatpak.org/) for
 [F-Droid Repomaker](https://f-droid.org/repomaker/).

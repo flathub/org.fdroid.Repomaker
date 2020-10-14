@@ -1,199 +1,374 @@
 {
     "name": "python-deps",
     "buildsystem": "simple",
-    "build-commands": [
-        "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} django django-allauth django-tinymce django-js-reverse django-compressor django-sass-processor django-hvad django-background-tasks qrcode six bleach python-magic html5lib cryptography asn1crypto cffi clint GitPython mwclient"
-    ],
-    "sources": [
+    "build-commands": [],
+    "modules": [
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/41/b6/4f0cefba47656583217acd6cd797bc2db1fede0d53090fdc28ad2c8e0716/certifi-2018.10.15.tar.gz",
-            "sha256": "6d58c986d22b038c8c0df30d639f23a3e6d172a05c3583e766f4c0b785c0986a"
+            "name": "python3-django",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"django<2\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/4f/a4/879454d49688e2fad93e59d7d4efda580b783c745fd2ec2a3adf87b0808d/pytz-2020.1-py2.py3-none-any.whl",
+                    "sha256": "a494d53b6d39c3c6e44c3bec237336e14305e4f29bbf800b599253057fbb79ed"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/49/49/178daa8725d29c475216259eb19e90b2aa0b8c0431af8c7e9b490ae6481d/Django-1.11.29-py2.py3-none-any.whl",
+                    "sha256": "014e3392058d94f40569206a24523ce254d55ad2f9f46c6550b0fe2e4f94cf3f"
+                }
+            ]
         },
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/b1/53/37d82ab391393565f2f831b8eedbffd57db5a718216f82f1a8b4d381a1c1/urllib3-1.24.1.tar.gz",
-            "sha256": "de9529817c93f27c8ccbfead6985011db27bd0ddfcdb2d86f3f663385c6a9c22"
+            "name": "python3-django-allauth",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"django-allauth<0.39\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/5e/c4/6c4fe722df5343c33226f0b4e0bb042e4dc13483228b4718baf286f86d87/certifi-2020.6.20-py2.py3-none-any.whl",
+                    "sha256": "8fc0819f1f30ba15bdb34cceffb9ef04d99f420f68eb75d901e9560b8749fc41"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/a2/38/928ddce2273eaa564f6f50de919327bf3a00f091b5baba8dfa9460f3a8a8/idna-2.10-py2.py3-none-any.whl",
+                    "sha256": "b97d804b1e9b523befed77c48dacec60e6dcb0b5391d57af6a65a312a90648c0"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl",
+                    "sha256": "fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/9f/f0/a391d1463ebb1b233795cabfc0ef38d3db4442339de68f847026199e69d7/urllib3-1.25.10-py2.py3-none-any.whl",
+                    "sha256": "e7983572181f5e1522d9c98453462384ee92a0be7fac5f1413a1e35c56cc0461"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/05/57/ce2e7a8fa7c0afb54a0581b14a65b56e62b5759dbc98e80627142b8a3704/oauthlib-3.1.0-py2.py3-none-any.whl",
+                    "sha256": "df884cd6cbe20e32633f1db1072e9356f53638e4361bef4e8b03c9127c9328ea"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/06/74/9b387472866358ebc08732de3da6dc48e44b0aacd2ddaa5cb85ab7e986a2/defusedxml-0.6.0-py2.py3-none-any.whl",
+                    "sha256": "6687150770438374ab581bb7a1b327a847dd9c5749e396102de3fad4e8a3ef93"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/4f/a4/879454d49688e2fad93e59d7d4efda580b783c745fd2ec2a3adf87b0808d/pytz-2020.1-py2.py3-none-any.whl",
+                    "sha256": "a494d53b6d39c3c6e44c3bec237336e14305e4f29bbf800b599253057fbb79ed"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/45/1e/0c169c6a5381e241ba7404532c16a21d86ab872c9bed8bdcd4c423954103/requests-2.24.0-py2.py3-none-any.whl",
+                    "sha256": "fe75cc94a9443b9246fc7049224f75604b113c36acb93f87b80ed42c44cbb898"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/a3/12/b92740d845ab62ea4edf04d2f4164d82532b5a0b03836d4d4e71c6f3d379/requests_oauthlib-1.3.0-py2.py3-none-any.whl",
+                    "sha256": "7f71572defaecd16372f9006f33c2ec8c077c3cfa6f5911a9a90202beb513f3d"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/e0/a5/c6ba13860bdf5525f1ab01e01cc667578d6f1efc8a1dba355700fb04c29b/python3_openid-3.2.0-py3-none-any.whl",
+                    "sha256": "6626f771e0417486701e0b4daff762e7212e820ca5b29fcc0d05f6f8736dfa6b"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/49/49/178daa8725d29c475216259eb19e90b2aa0b8c0431af8c7e9b490ae6481d/Django-1.11.29-py2.py3-none-any.whl",
+                    "sha256": "014e3392058d94f40569206a24523ce254d55ad2f9f46c6550b0fe2e4f94cf3f"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/69/b3/7edc977e66ef76fe740f16552f65c1a043a944227fb6063327b31cde2573/django-allauth-0.38.0.tar.gz",
+                    "sha256": "45661b6fe308466154adf54461679fab6f0c6850b10c56dc322fbbb9d47e03d9"
+                }
+            ]
         },
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/65/c4/80f97e9c9628f3cac9b98bfca0402ede54e0563b56482e3e6e45c43c4935/idna-2.7.tar.gz",
-            "sha256": "684a38a6f903c1d71d6d5fac066b58d7768af4de2b832e426ec79c30daa94a16"
+            "name": "python3-django-tinymce",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"django-tinymce<3\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/f9/aa/05569735ef149da1c3d79ecf1b863651bacb3ce1032ab1a2b28441f63ef8/django_tinymce-2.9.0-py2.py3-none-any.whl",
+                    "sha256": "cdce6b66520f6ae468ceb7390ec6cb56720bf543dcf212423290544d20715031"
+                }
+            ]
         },
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/fc/bb/a5768c230f9ddb03acc9ef3f0d4a3cf93462473795d18e9535498c8f929d/chardet-3.0.4.tar.gz",
-            "sha256": "84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"
+            "name": "python3-django-js-reverse",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"django-js-reverse\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/4f/a4/879454d49688e2fad93e59d7d4efda580b783c745fd2ec2a3adf87b0808d/pytz-2020.1-py2.py3-none-any.whl",
+                    "sha256": "a494d53b6d39c3c6e44c3bec237336e14305e4f29bbf800b599253057fbb79ed"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/49/49/178daa8725d29c475216259eb19e90b2aa0b8c0431af8c7e9b490ae6481d/Django-1.11.29-py2.py3-none-any.whl",
+                    "sha256": "014e3392058d94f40569206a24523ce254d55ad2f9f46c6550b0fe2e4f94cf3f"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/17/e0/283b0553f445bd3b45997d3c4d91ffb1a39855e5d7174a0879587a06674c/django_js_reverse-0.9.1-py2.py3-none-any.whl",
+                    "sha256": "8134c2ab6307c945edfa90671ca65e85d6c1754d48566bdd6464be259cc80c30"
+                }
+            ]
         },
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/df/5f/3f4aae7b28db87ddef18afed3b71921e531ca288dc604eb981e9ec9f8853/oauthlib-2.1.0.tar.gz",
-            "sha256": "ac35665a61c1685c56336bda97d5eefa246f1202618a1d6f34fccb1bdd404162"
+            "name": "python3-django-compressor",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"django-compressor\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/4f/a4/879454d49688e2fad93e59d7d4efda580b783c745fd2ec2a3adf87b0808d/pytz-2020.1-py2.py3-none-any.whl",
+                    "sha256": "a494d53b6d39c3c6e44c3bec237336e14305e4f29bbf800b599253057fbb79ed"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/49/49/178daa8725d29c475216259eb19e90b2aa0b8c0431af8c7e9b490ae6481d/Django-1.11.29-py2.py3-none-any.whl",
+                    "sha256": "014e3392058d94f40569206a24523ce254d55ad2f9f46c6550b0fe2e4f94cf3f"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/e2/5f/852be8aa80d1c24de9b030cdb6532bc7e7a1c8461554f6edbe14335ba890/rcssmin-1.0.6.tar.gz",
+                    "sha256": "ca87b695d3d7864157773a61263e5abb96006e9ff0e021eff90cbe0e1ba18270"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/72/fe/1fa374775fb853c6a075f301eeb48e9069460e03f4d3c3d5502fb1b4a766/django_appconf-1.0.4-py2.py3-none-any.whl",
+                    "sha256": "1b1d0e1069c843ebe8ae5aa48ec52403b1440402b320c3e3a206a0907e97bb06"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/a2/ba/0fa30f7ec949714b8397e80ee2057d1a7e77b3a9f1b94c1ece93586cf34f/rjsmin-1.1.0.tar.gz",
+                    "sha256": "b15dc75c71f65d9493a8c7fa233fdcec823e3f1b88ad84a843ffef49b338ac32"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl",
+                    "sha256": "8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/d7/07/2c7524eb05f9eb770b3e39deb0dacf6fb8c5d21107c9d1cbab3ebd300bfe/django_compressor-2.4-py2.py3-none-any.whl",
+                    "sha256": "57ac0a696d061e5fc6fbc55381d2050f353b973fb97eee5593f39247bc0f30af"
+                }
+            ]
         },
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/74/ba/4ba4e89e21b5a2e267d80736ea674609a0a33cc4435a6d748ef04f1f9374/defusedxml-0.5.0.tar.gz",
-            "sha256": "24d7f2f94f7f3cb6061acb215685e5125fbcdc40a857eff9de22518820b0a4f4"
+            "name": "python3-django-sass-processor",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"django-sass-processor\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/02/06/ab99d740df814e418371cbf294436d01c981d9ccf1fa4910a499e452d268/django-sass-processor-0.8.2.tar.gz",
+                    "sha256": "9b46a12ca8bdcb397d46fbcc49e6a926ff9f76a93c5efeb23b495419fd01fc7a"
+                }
+            ]
         },
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/0b/02/ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47/webencodings-0.5.1.tar.gz",
-            "sha256": "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
+            "name": "python3-django-hvad",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"django-hvad\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/4f/a4/879454d49688e2fad93e59d7d4efda580b783c745fd2ec2a3adf87b0808d/pytz-2020.1-py2.py3-none-any.whl",
+                    "sha256": "a494d53b6d39c3c6e44c3bec237336e14305e4f29bbf800b599253057fbb79ed"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/49/49/178daa8725d29c475216259eb19e90b2aa0b8c0431af8c7e9b490ae6481d/Django-1.11.29-py2.py3-none-any.whl",
+                    "sha256": "014e3392058d94f40569206a24523ce254d55ad2f9f46c6550b0fe2e4f94cf3f"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/b5/99/34cf0e98ea7500d8fd6019814f2141e89f892478953845c4b46ef96591cc/django-hvad-1.8.0.zip",
+                    "sha256": "d0870800c32195c15266c28bcc39e0197bbc17d11fbc6b17fee2dc550fa159b1"
+                }
+            ]
         },
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/6b/03/84a887c67dbaf8b9fe7a876f44b2c6050c2a247e34e5fad6791fd15cf12f/django-compat-1.0.15.tar.gz",
-            "sha256": "3ac9a3bedc56b9365d9eb241bc5157d0c193769bf995f9a78dc1bc24e7c2331b"
+            "name": "python3-django-background-tasks",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"django-background-tasks==1.1.13\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl",
+                    "sha256": "8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/6b/03/84a887c67dbaf8b9fe7a876f44b2c6050c2a247e34e5fad6791fd15cf12f/django-compat-1.0.15.tar.gz",
+                    "sha256": "3ac9a3bedc56b9365d9eb241bc5157d0c193769bf995f9a78dc1bc24e7c2331b"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/51/f1/bab33181318bda7b54e733b71d3863ef512a1fe8a713068d2ba78ec10df4/django-background-tasks-1.1.13.tar.gz",
+                    "sha256": "6487f0d6ccf6a4e690a2decb23f868fe57e7bcf0c3abf0d94dcaed7341ebe96a"
+                }
+            ]
         },
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/10/9c/2c45f57d43258b05bf33cf8f6c8161ea5abf8b4776a5c59d12646727cd98/rjsmin-1.0.12.tar.gz",
-            "sha256": "dd9591aa73500b08b7db24367f8d32c6470021f39d5ab4e50c7c02e4401386f1"
+            "name": "python3-bleach",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"bleach\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/8a/bb/488841f56197b13700afd5658fc279a2025a39e22449b7cf29864669b15d/pyparsing-2.4.7-py2.py3-none-any.whl",
+                    "sha256": "ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl",
+                    "sha256": "8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/46/19/c5ab91b1b05cfe63cccd5cfc971db9214c6dd6ced54e33c30d5af1d2bc43/packaging-20.4-py2.py3-none-any.whl",
+                    "sha256": "998416ba6962ae7fbd6596850b80e17859a5753ba17c32284f67bfff33784181"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl",
+                    "sha256": "a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/03/c8/b7ed0dfea5cb287907bd22c5ff7c3ed0a65b346f2a4cf916eb9e83be66b3/bleach-3.2.1-py2.py3-none-any.whl",
+                    "sha256": "9f8ccbeb6183c6e6cddea37592dfb0167485c1e3b13b3363bc325aa8bda3adbd"
+                }
+            ]
         },
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/e2/5f/852be8aa80d1c24de9b030cdb6532bc7e7a1c8461554f6edbe14335ba890/rcssmin-1.0.6.tar.gz",
-            "sha256": "ca87b695d3d7864157773a61263e5abb96006e9ff0e021eff90cbe0e1ba18270"
+            "name": "python3-python-magic",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-magic\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/59/77/c76dc35249df428ce2c38a3196e2b2e8f9d2f847a8ca1d4d7a3973c28601/python_magic-0.4.18-py2.py3-none-any.whl",
+                    "sha256": "356efa93c8899047d1eb7d3eb91e871ba2f5b1376edbaf4cc305e3c872207355"
+                }
+            ]
         },
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/34/b9/d07195652ab494b026f7cb0341dd6e5f2e6e39be177abe05e2cec8bd46e4/django-appconf-1.0.2.tar.gz",
-            "sha256": "6a4d9aea683b4c224d97ab8ee11ad2d29a37072c0c6c509896dd9857466fb261"
+            "name": "python3-html5lib",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"html5lib\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl",
+                    "sha256": "8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl",
+                    "sha256": "a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/6c/dd/a834df6482147d48e225a49515aabc28974ad5a4ca3215c18a882565b028/html5lib-1.1-py2.py3-none-any.whl",
+                    "sha256": "0d78f8fde1c230e99fe37986a60526d7049ed4bf8a9fadbad5f00e22e58e041d"
+                }
+            ]
         },
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/40/35/298c36d839547b50822985a2cf0611b3b978a5ab7a5af5562b8ebe3e1369/requests-2.20.1.tar.gz",
-            "sha256": "ea881206e59f41dbd0bd445437d792e43906703fff75ca8ff43ccdb11f33f263"
+            "name": "python3-requests-oauthlib",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"requests-oauthlib>=0.3.0\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/9f/f0/a391d1463ebb1b233795cabfc0ef38d3db4442339de68f847026199e69d7/urllib3-1.25.10-py2.py3-none-any.whl",
+                    "sha256": "e7983572181f5e1522d9c98453462384ee92a0be7fac5f1413a1e35c56cc0461"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/5e/c4/6c4fe722df5343c33226f0b4e0bb042e4dc13483228b4718baf286f86d87/certifi-2020.6.20-py2.py3-none-any.whl",
+                    "sha256": "8fc0819f1f30ba15bdb34cceffb9ef04d99f420f68eb75d901e9560b8749fc41"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/a2/38/928ddce2273eaa564f6f50de919327bf3a00f091b5baba8dfa9460f3a8a8/idna-2.10-py2.py3-none-any.whl",
+                    "sha256": "b97d804b1e9b523befed77c48dacec60e6dcb0b5391d57af6a65a312a90648c0"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl",
+                    "sha256": "fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/05/57/ce2e7a8fa7c0afb54a0581b14a65b56e62b5759dbc98e80627142b8a3704/oauthlib-3.1.0-py2.py3-none-any.whl",
+                    "sha256": "df884cd6cbe20e32633f1db1072e9356f53638e4361bef4e8b03c9127c9328ea"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/45/1e/0c169c6a5381e241ba7404532c16a21d86ab872c9bed8bdcd4c423954103/requests-2.24.0-py2.py3-none-any.whl",
+                    "sha256": "fe75cc94a9443b9246fc7049224f75604b113c36acb93f87b80ed42c44cbb898"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/a3/12/b92740d845ab62ea4edf04d2f4164d82532b5a0b03836d4d4e71c6f3d379/requests_oauthlib-1.3.0-py2.py3-none-any.whl",
+                    "sha256": "7f71572defaecd16372f9006f33c2ec8c077c3cfa6f5911a9a90202beb513f3d"
+                }
+            ]
         },
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/95/be/072464f05b70e4142cb37151e215a2037b08b1400f8a56f2538b76ca6205/requests-oauthlib-1.0.0.tar.gz",
-            "sha256": "8886bfec5ad7afb391ed5443b1f697c6f4ae98d0e5620839d8b4499c032ada3f"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/9e/75/83541390a7fa0bc9083be88980e2fbd574f927a53a0e60cb61f0c28e83b6/python3-openid-3.1.0.tar.gz",
-            "sha256": "628d365d687e12da12d02c6691170f4451db28d6d68d050007e4a40065868502"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/cd/71/ae99fc3df1b1c5267d37ef2c51b7d79c44ba8a5e37b48e3ca93b4d74d98b/pytz-2018.7.tar.gz",
-            "sha256": "31cb35c89bd7d333cd32c5f278fca91b523b0834369e757f4c5641ea252236ca"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/85/3e/cf449cf1b5004e87510b9368e7a5f1acd8831c2d6691edd3c62a0823f98f/html5lib-1.0.1.tar.gz",
-            "sha256": "66cb0dcfdbbc4f9c3ba1a63fdb511ffdbd4f513b2b6d81b80cd26ce6b3fb3736"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/84/30/80932401906eaf787f2e9bd86dc458f1d2e75b064b4c187341f29516945c/python-magic-0.4.15.tar.gz",
-            "sha256": "f3765c0f582d2dfc72c15f3b5a82aecfae9498bd29ca840d72f37d7bd38bfcd5"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/ae/31/680afc7d44040004296a2d8f0584983c2f2386448cd9d0964197e6c1160e/bleach-3.0.2.tar.gz",
-            "sha256": "48d39675b80a75f6d1c3bdbffec791cf0bbbab665cf01e20da701c77de278718"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/dd/bf/4138e7bfb757de47d1f4b6994648ec67a51efe58fa907c1e11e350cddfca/six-1.12.0.tar.gz",
-            "sha256": "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/87/16/99038537dc58c87b136779c0e06d46887ff5104eb8c64989aac1ec8cba81/qrcode-5.3.tar.gz",
-            "sha256": "4115ccee832620df16b659d4653568331015c718a754855caf5930805d76924e"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/51/f1/bab33181318bda7b54e733b71d3863ef512a1fe8a713068d2ba78ec10df4/django-background-tasks-1.1.13.tar.gz",
-            "sha256": "6487f0d6ccf6a4e690a2decb23f868fe57e7bcf0c3abf0d94dcaed7341ebe96a"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/b5/99/34cf0e98ea7500d8fd6019814f2141e89f892478953845c4b46ef96591cc/django-hvad-1.8.0.zip",
-            "sha256": "d0870800c32195c15266c28bcc39e0197bbc17d11fbc6b17fee2dc550fa159b1"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/93/2d/0f50d7414d59131e5365a869c1092996ad3c6b112b6409f5c80576cae101/django-sass-processor-0.7.2.tar.gz",
-            "sha256": "0381585a23c0f31a387cb53cf38f744e4d97d8ac3b9b19ec423dd6bfa714ecff"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/82/76/1355459f90714517c52f264aa7245b52e59a273ec16e8f8d505fa6c342f8/django_compressor-2.2.tar.gz",
-            "sha256": "9616570e5b08e92fa9eadc7a1b1b49639cce07ef392fc27c74230ab08075b30f"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/88/60/36608197ac7a70f937ed8d1c9dc261e282a56c7b995df318574e07cb43e4/django-js-reverse-0.8.2.tar.gz",
-            "sha256": "6a7cc6fc16c23cfcd5d79022a06465f2a29d0cb91e6ca56c0f0deb178c202c76"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/3a/cf/95726c0fbb2b05ccb50ee8ec2fc0c64222800d20c5c852553d8246af1615/django-tinymce-2.7.0.tar.gz",
-            "sha256": "a7594f342786834e4f6585334652c6a37f1e11ccbc3ea83ae76b9ff9b3cf590c"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/69/b3/7edc977e66ef76fe740f16552f65c1a043a944227fb6063327b31cde2573/django-allauth-0.38.0.tar.gz",
-            "sha256": "45661b6fe308466154adf54461679fab6f0c6850b10c56dc322fbbb9d47e03d9"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/35/1d/59836bce4c9cfded261e21c0abd6a4629de6d289522d0fd928117d8eb985/Django-1.11.16.tar.gz",
-            "sha256": "29268cc47816a44f27308e60f71da635f549c47d8a1d003b28de55141df75791"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/f3/39/d3904df7c56f8654691c4ae1bdb270c1c9220d6da79bd3b1fbad91afd0e1/cryptography-2.4.2.tar.gz",
-            "sha256": "05a6052c6a9f17ff78ba78f8e6eb1d777d25db3b763343a1ae89a7a8670386dd"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/fc/f1/8db7daa71f414ddabfa056c4ef792e1461ff655c2ae2928a2b675bfed6b4/asn1crypto-0.24.0.tar.gz",
-            "sha256": "9d5c20441baf0cb60a4ac34cc447c6c189024b6b4c6cd7877034f4965c464e49"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/68/9e/49196946aee219aead1290e00d1e7fdeab8567783e83e1b9ab5585e6206a/pycparser-2.19.tar.gz",
-            "sha256": "a988718abfad80b6b157acce7bf130a30876d27603738ac39f140993246b25b3"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/e7/a7/4cd50e57cc6f436f1cc3a7e8fa700ff9b8b4d471620629074913e3735fb2/cffi-1.11.5.tar.gz",
-            "sha256": "e90f17980e6ab0f3c2f3730e56d1fe9bcba1891eeea58966e89d352492cc74f4"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/e5/1c/b701b3f4bd8d3667df8342f311b3efaeab86078a840fb826bd204118cc6b/args-0.1.0.tar.gz",
-            "sha256": "a785b8d837625e9b61c39108532d95b85274acd679693b71ebb5156848fcf814"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/3d/b4/41ecb1516f1ba728f39ee7062b9dac1352d39823f513bb6f9e8aeb86e26d/clint-0.5.1.tar.gz",
-            "sha256": "05224c32b1075563d0b16d0015faaf9da43aa214e4a2140e51f08789e7a4c5aa"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/3b/ba/e49102b3e8ffff644edded25394b2d22ebe3e645f3f6a8139129c4842ffe/smmap2-2.0.5.tar.gz",
-            "sha256": "29a9ffa0497e7f2be94ca0ed1ca1aa3cd4cf25a1f6b4f5f87f74b46ed91d609a"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/c4/5c/579abccd59187eaf6b3c8a4a6ecd86fce1dfd818155bfe4c52ac28dca6b7/gitdb2-2.0.5.tar.gz",
-            "sha256": "83361131a1836661a155172932a13c08bda2db3674e4caa32368aa6eb02f38c2"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/4d/e8/98e06d3bc954e3c5b34e2a579ddf26255e762d21eb24fede458eff654c51/GitPython-2.1.11.tar.gz",
-            "sha256": "8237dc5bfd6f1366abeee5624111b9d6879393d84745a507de0fda86043b65a8"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/14/3e/3d33ad1e144f95c86ec9ef75de88dea41c9c9a1458709f358035e86c069a/mwclient-0.9.3.tar.gz",
-            "sha256": "105123ec13a9519453612edf6f2d055b6b0f15ea6c457ea2c0c53af1951e3fd3"
+            "name": "python3-babel",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"babel\""
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/4f/a4/879454d49688e2fad93e59d7d4efda580b783c745fd2ec2a3adf87b0808d/pytz-2020.1-py2.py3-none-any.whl",
+                    "sha256": "a494d53b6d39c3c6e44c3bec237336e14305e4f29bbf800b599253057fbb79ed"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/15/a1/522dccd23e5d2e47aed4b6a16795b8213e3272c7506e625f2425ad025a19/Babel-2.8.0-py2.py3-none-any.whl",
+                    "sha256": "d670ea0b10f8b723672d3a6abeb87b565b244da220d76b4dba1b66269ec152d4"
+                }
+            ]
         }
     ]
 }
