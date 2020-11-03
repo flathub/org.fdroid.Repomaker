@@ -81,8 +81,8 @@
                 },
                 {
                     "type" : "file",
-                    "url" : "https://gitlab.com/fdroid/repomaker/raw/9fe645a71dad4572302d530d27e027ffd25107dd/debian/data/org.fdroid.Repomaker.appdata.xml",
-                    "sha256": "b55eaf219729e24bc0a6b00f81ca788f7bfeb9a42c42eaa1a057ebbc94f3c000"
+                    "url" : "https://gitlab.com/fdroid/repomaker/-/raw/master/debian/data/org.fdroid.Repomaker.appdata.xml",
+                    "sha256": "e4cbc4ce6b60ba099f2b514ca32e264e968faef615438bdec9f17e2df87563e7"
                 },
                 {
                     "type": "file",
