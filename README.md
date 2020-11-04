@@ -57,6 +57,16 @@ flatpak-builder builddir --install-deps-from=flathub --user --install --force-cl
 flatpak run org.fdroid.Repomaker
 ```
 
+## Updating `python-deps.json`
+
+To update `python-deps.json` use `flatpak-pip-generator` from
+[`flatpak-builder-tools`](https://github.com/flatpak/flatpak-builder-tools)
+with:
+
+```bash
+flatpak-pip-generator django\<2 django-allauth\<0.39 django-tinymce\<3 django-js-reverse django-compressor  django-sass-processor django-hvad django-background-tasks==1.1.13 bleach python-magic html5lib requests-oauthlib\>=0.3.0 babel
+```
+
 ### Install latest dev flatpak
 
 If you don't want to build the flatpak yourself,
