@@ -31,6 +31,8 @@
         {
             "name": "git",
             "no-autogen": true,
+            "make-args": ["INSTALL_SYMLINKS=1"],
+            "make-install-args": ["INSTALL_SYMLINKS=1"],
             "sources": [{
                 "type": "archive",
                 "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.21.0.tar.gz",
