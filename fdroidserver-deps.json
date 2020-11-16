@@ -2,6 +2,10 @@
     "name": "fdroidserver-deps",
     "buildsystem": "simple",
     "build-commands": [
+        "mkdir -p tmp/matplotlib",
+        "printf 'from setuptools import setup; setup(name=\"matplotlib\", version=\"3.0.2\", packages=[\"matplotlib\"])\n' > tmp/setup.py",
+        "echo '__version__ = \"3.0.2\"' > tmp/matplotlib/__init__.py",
+        "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} -e tmp",
         "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"fdroidserver==1.1.10\""
     ],
     "sources": [
@@ -44,11 +48,6 @@
             "type": "file",
             "url": "https://files.pythonhosted.org/packages/b0/9a/4d409a6234eb940e6a78dfdfc66156e7522262f5f2fecca07dc55915952d/smmap-3.0.4-py2.py3-none-any.whl",
             "sha256": "54c44c197c819d5ef1991799a7e30b662d1e520f2ac75c9efbeb54a742214cf4"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/36/ac/c8627c214954b18b197f137ee96bc99e1cc31913d80d7ad59fbab3b05945/kiwisolver-1.2.0-cp38-cp38-manylinux1_x86_64.whl",
-            "sha256": "e586b28354d7b6584d8973656a7954b1c69c93f708c0c07b77884f91640b7657"
         },
         {
             "type": "file",
@@ -204,11 +203,6 @@
             "type": "file",
             "url": "https://files.pythonhosted.org/packages/d2/3d/fa76db83bf75c4f8d338c2fd15c8d33fdd7ad23a9b5e57eb6c5de26b430e/click-7.1.2-py2.py3-none-any.whl",
             "sha256": "dacca89f4bfadd5de3d7489b7c8a566eee0d3676333fbb50030263894c38c0dc"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/93/95/83cca4fe4e4925142542acd318cb59b188eeb7a53bc24a6aacc0834a23b9/matplotlib-3.3.2-cp38-cp38-manylinux1_x86_64.whl",
-            "sha256": "c5d0c2ae3e3ed4e9f46b7c03b40d443601012ffe8eb8dfbb2bd6b2d00509f797"
         },
         {
             "type": "file",
