@@ -2,10 +2,6 @@
     "name": "fdroidserver-deps",
     "buildsystem": "simple",
     "build-commands": [
-        "mkdir -p tmp/matplotlib",
-        "printf 'from setuptools import setup; setup(name=\"matplotlib\", version=\"3.0.2\", packages=[\"matplotlib\"])\n' > tmp/setup.py",
-        "echo '__version__ = \"3.0.2\"' > tmp/matplotlib/__init__.py",
-        "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} -e tmp",
         "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"fdroidserver==1.1.10\""
     ],
     "sources": [
