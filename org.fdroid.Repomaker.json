@@ -36,7 +36,13 @@
             "sources": [{
                 "type": "archive",
                 "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.21.0.tar.gz",
-                "sha256": "85eca51c7404da75e353eba587f87fea9481ba41e162206a6f70ad8118147bee"
+                "sha256": "85eca51c7404da75e353eba587f87fea9481ba41e162206a6f70ad8118147bee",
+                "x-checker-data": {
+                    "type": "anitya",
+                    "project-id": 5350,
+                    "stable-only": true,
+                    "url-template": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.gz"
+                }
             }]
         },
         {
