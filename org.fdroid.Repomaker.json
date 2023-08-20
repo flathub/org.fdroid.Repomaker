@@ -1,7 +1,7 @@
 {
     "app-id": "org.fdroid.Repomaker",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.36",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.openjdk11",
