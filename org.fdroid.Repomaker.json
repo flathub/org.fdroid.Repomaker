@@ -24,8 +24,8 @@
             "cleanup": ["/share/man"],
             "sources": [{
                 "type": "archive",
-                "url": "https://download.samba.org/pub/rsync/src/rsync-3.1.3.tar.gz",
-                "sha256": "55cc554efec5fdaad70de921cd5a5eeb6c29a95524c715f3bbf849235b0800c0"
+                "url": "https://download.samba.org/pub/rsync/src/rsync-3.2.7.tar.gz",
+                "sha256": "4e7d9d3f6ed10878c58c5fb724a67dacf4b6aac7340b13e488fb2dc41346f2bb"
             }]
         },
         {
@@ -83,11 +83,6 @@
                     "type" : "file",
                     "url" : "https://gitlab.com/fdroid/repomaker/-/raw/master/debian/data/org.fdroid.Repomaker.appdata.xml",
                     "sha256": "e4cbc4ce6b60ba099f2b514ca32e264e968faef615438bdec9f17e2df87563e7"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/a3/a8/32af11b7893d4d4239df5496a545dc870a7c41b99c5418199a384768920a/pywebview-2.2.1.tar.gz",
-                    "sha256": "b680dcc517a8b742b1abec6db626d3795b7a5b589af36c0bc022febc3285904b"
                 },
                 {
                     "type" : "file",
