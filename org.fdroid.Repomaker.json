@@ -4,7 +4,8 @@
     "runtime-version": "3.36",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.openjdk11"
+        "org.freedesktop.Sdk.Extension.openjdk11",
+        "org.freedesktop.Sdk.Extension.rust-stable"
     ],
     "command": "repomaker",
     "finish-args" : [
@@ -21,6 +22,11 @@
         {
             "name": "rsync",
             "no-autogen": true,
+            "config-opts": [
+                "--prefix=${FLATPAK_DEST}",
+                "--disable-debug",
+                "--disable-xxhash"
+            ],
             "cleanup": ["/share/man"],
             "sources": [{
                 "type": "archive",
