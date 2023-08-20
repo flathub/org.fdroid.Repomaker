@@ -47,8 +47,18 @@
               "cp /usr/lib/sdk/openjdk11/jvm/openjdk-11/bin/jarsigner /app/jre/bin/"
             ]
         },
-        "python-deps.json",
-        "fdroidserver-deps.json",
+        {
+            "name": "qhull",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://www.qhull.org/download/qhull-2020-src-8.0.2.tgz",
+                    "sha256": "b5c2d7eb833278881b952c8a52d20179eab87766b00b865000469a45c1838b7e"
+                }
+            ]
+        },
+        "python3-modules.json",
         {
             "name" : "repomaker",
             "buildsystem" : "simple",
@@ -56,8 +66,7 @@
                 "install -Dm644 org.fdroid.Repomaker.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
                 "install -Dm644 org.fdroid.Repomaker.desktop /app/share/applications/${FLATPAK_ID}.desktop",
                 "install -Dm644 org.fdroid.Repomaker.appdata.xml /app/share/metainfo/${FLATPAK_ID}.appdata.xml",
-                "pip3 install --no-index --ignore-requires-python --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} repomaker",
-                "pip3 install --no-deps --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} pywebview"
+                "pip3 install --no-index --ignore-requires-python --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} repomaker"
             ],
             "sources" : [
                 {
