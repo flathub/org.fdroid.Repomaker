@@ -1,3 +1,4 @@
 {
-  "only-arches": ["arm", "aarch64", "x86_64"]
+  "only-arches": ["arm", "aarch64", "x86_64"],
+  "end-of-life": "This application is no longer maintained."
 }
